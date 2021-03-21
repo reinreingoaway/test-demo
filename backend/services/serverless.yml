@@ -1,0 +1,26 @@
+service: add
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: eu-central-1
+  httpApi:
+    cors: true
+
+functions:
+  add:
+    handler: handler.add
+    role: arn:aws:iam::210360564840:role/service-role/add-something-role-74sgks96
+    events:
+      - httpApi:
+          path: /add
+          method: post
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true

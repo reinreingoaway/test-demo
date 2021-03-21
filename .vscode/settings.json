@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.serverless": true,
+        "**/.venv": true,
+        "**/backend.egg-info": true,
+        "**/cdk.out": true
+    }
+}
